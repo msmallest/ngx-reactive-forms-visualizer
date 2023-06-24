@@ -2,9 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
-## Thanks you
+## Thank you
 
 Dedicated to my late grandmother Marine
+
+Thank you to my college University of Minnesota, Morris for starting me with Angular
+
+Thank you to Relationship One for providing me with an Angular job
+
+Friends/family
 
 ## ANGULAR BOILERPLATE README
 
