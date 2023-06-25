@@ -1,5 +1,10 @@
 <h1>ngx-reactive-forms-visualizer</h1>
 
+<form [formGroup]="exampleForm">
+  <label for="name">Name: </label>
+  <input id="name" type="text" [formControl]="exampleForm.controls.name" />
+</form>
+
 <div id="example-prejson">
   <p>
     When working on reactive forms in Angular, a common way to visualize
@@ -17,4 +22,11 @@
 <div id="example-librarys-prejson">
   <p>Here is the same code but in the library's most basic component</p>
   <lib-basic-pre [formGroupInput]="exampleForm"></lib-basic-pre>
+</div>
+
+<div id="example-librarys-validationstatustree">
+  <b>Validation Status Tree</b>
+  <lib-validation-status-tree
+    [formGroupElement]="exampleForm"
+  ></lib-validation-status-tree>
 </div>

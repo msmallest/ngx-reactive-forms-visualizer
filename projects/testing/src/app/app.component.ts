@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NonNullableFormBuilder } from '@angular/forms';
+import {
+  FormBuilder,
+  NonNullableFormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +13,10 @@ import { FormBuilder, NonNullableFormBuilder } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   exampleForm = this.fb.group({
-    name: [''],
+    name: ['', Validators.required],
     town: [''],
     addressNumber: [null],
+    nickname: [''],
   });
   snippet = '<pre>{{form.value | json}}</pre>';
   constructor(private fb: NonNullableFormBuilder) {}
