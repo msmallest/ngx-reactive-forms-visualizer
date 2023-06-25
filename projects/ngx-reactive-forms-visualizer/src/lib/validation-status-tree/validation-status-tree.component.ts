@@ -10,7 +10,16 @@ export class ValidationStatusTreeComponent implements OnInit {
   @Input({ required: true })
   formGroupElement!: FormGroup;
 
-  namesToValidity: { [key: string]: string } = {};
+  namesToValidity: Signal<{ [key: string]: string }> = computed(() => {
+    let obj: { [key: string]: string } = {};
+    for (let i = 0; i < this.controls().length; i++) {
+      let controlName = this.controlNames()[i];
+      let controlValidity = this.controls()[i].status;
+
+      obj[controlName] = controlValidity;
+    }
+    return obj;
+  });
 
   controlNames: Signal<string[]> = computed(() => {
     let namesArr: string[] = [];
@@ -30,18 +39,5 @@ export class ValidationStatusTreeComponent implements OnInit {
     return controlsArr;
   });
 
-  ngOnInit() {
-    console.log(this.formGroupElement);
-    console.log(this.controlNames());
-    console.log(this.controls());
-
-    for (let i = 0; i < this.controls().length; i++) {
-      let controlName = this.controlNames()[i];
-      let controlValidity = this.controls()[i].status;
-
-      this.namesToValidity[controlName] = controlValidity;
-    }
-
-    console.log(this.namesToValidity);
-  }
+  ngOnInit() {}
 }
