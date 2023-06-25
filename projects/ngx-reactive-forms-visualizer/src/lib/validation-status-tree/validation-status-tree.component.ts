@@ -1,5 +1,10 @@
 import { Component, Input, OnInit, Signal, computed } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormControlStatus,
+  FormGroup,
+} from '@angular/forms';
 
 @Component({
   selector: 'lib-validation-status-tree',
@@ -10,8 +15,10 @@ export class ValidationStatusTreeComponent implements OnInit {
   @Input({ required: true })
   formGroupElement!: FormGroup;
 
-  namesToValidity: Signal<{ [key: string]: string }> = computed(() => {
-    let obj: { [key: string]: string } = {};
+  namesToValidity: Signal<{
+    [key: string]: 'VALID' | 'INVALID' | 'PENDING' | 'DISABLED';
+  }> = computed(() => {
+    let obj: { [key: string]: FormControlStatus } = {};
     for (let i = 0; i < this.controls().length; i++) {
       let controlName = this.controlNames()[i];
       let controlValidity = this.controls()[i].status;
