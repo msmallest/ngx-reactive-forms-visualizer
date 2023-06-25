@@ -1,10 +1,18 @@
-import { Component, Input, OnInit, Signal, computed } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Signal,
+  computed,
+  signal,
+} from '@angular/core';
 import {
   AbstractControl,
   FormControl,
   FormControlStatus,
   FormGroup,
 } from '@angular/forms';
+import { FormUtilService } from '../internal/services/form-utils.service';
 
 @Component({
   selector: 'lib-validation-status-tree',
@@ -14,6 +22,9 @@ import {
 export class ValidationStatusTreeComponent implements OnInit {
   @Input({ required: true })
   formGroupElement!: FormGroup;
+  form = signal(new FormGroup({}));
+
+  constructor(private formUtil: FormUtilService) {}
 
   namesToValidity: Signal<{
     [key: string]: 'VALID' | 'INVALID' | 'PENDING' | 'DISABLED';
@@ -25,26 +36,22 @@ export class ValidationStatusTreeComponent implements OnInit {
 
       obj[controlName] = controlValidity;
     }
+    console.log(obj);
     return obj;
   });
 
   controlNames: Signal<string[]> = computed(() => {
-    let namesArr: string[] = [];
-    for (var property in this.formGroupElement.controls) {
-      namesArr.push(property);
-    }
-    return namesArr;
+    return this.formUtil.getControlNames(this.form());
   });
 
   controls: Signal<AbstractControl[]> = computed(() => {
-    let controlsArr: AbstractControl[] = [];
-    Object.keys(this.formGroupElement.controls).forEach((key) => {
-      if (this.formGroupElement.get(key)) {
-        controlsArr.push(this.formGroupElement.controls[key]);
-      }
-    });
-    return controlsArr;
+    return this.formUtil.getControls(this.form());
   });
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.form.set(this.formGroupElement);
+    this.formGroupElement.valueChanges.subscribe((formGroupChange) => {
+      this.form.set(this.formGroupElement);
+    });
+  }
 }
