@@ -1,11 +1,25 @@
 <h1>ngx-reactive-forms-visualizer</h1>
 
-<form [formGroup]="exampleForm">
-  <label for="name">Name: </label>
-  <input id="name" type="text" [formControl]="exampleForm.controls.name" />
-</form>
+<div>
+  <form [formGroup]="exampleForm" id="main-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name: </mat-label>
+      <input
+        matInput
+        placeholder="name"
+        [formControl]="exampleForm.controls.name"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="exampleForm.controls.name.errors?.['required'] && exampleForm.dirty"
+    >
+      Name is required
+    </mat-error>
+  </form>
+</div>
 
 <div id="example-prejson">
+  <b>{{ snippet }}</b>
   <p>
     When working on reactive forms in Angular, a common way to visualize
     reactive forms is by using
@@ -20,7 +34,7 @@
 </p>
 
 <div id="example-librarys-prejson">
-  <p>Here is the same code but in the library's most basic component</p>
+  <b>Here is the same code but in the library's most basic component</b>
   <lib-basic-pre [formGroupInput]="exampleForm"></lib-basic-pre>
 </div>
 

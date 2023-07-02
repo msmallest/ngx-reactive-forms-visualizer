@@ -28,10 +28,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/ngx-reactive-forms-visualizer/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -53,9 +50,7 @@
             "outputPath": "dist/testing",
             "index": "projects/testing/src/index.html",
             "main": "projects/testing/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/testing/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -63,7 +58,8 @@
               "projects/testing/src/assets"
             ],
             "styles": [
-              "projects/testing/src/styles.scss"
+              "projects/testing/src/styles.scss",
+              "projects/testing/src/theme.scss"
             ],
             "scripts": []
           },
@@ -115,19 +111,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/testing/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/testing/src/favicon.ico",
               "projects/testing/src/assets"
             ],
-            "styles": [
-              "projects/testing/src/styles.scss"
-            ],
+            "styles": ["projects/testing/src/styles.scss", "src/theme.scss"],
             "scripts": []
           }
         }
