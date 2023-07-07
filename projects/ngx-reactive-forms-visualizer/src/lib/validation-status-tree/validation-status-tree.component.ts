@@ -20,6 +20,7 @@ import { FormUtilService } from '../internal/services/form-utils.service';
 export class ValidationStatusTreeComponent implements OnInit {
     @Input({ required: true })
     formGroupElement!: FormGroup;
+
     form = signal(new FormGroup({}));
 
     constructor(private formUtil: FormUtilService) {}
@@ -27,15 +28,10 @@ export class ValidationStatusTreeComponent implements OnInit {
     namesToValidity: Signal<{
         [key: string]: 'VALID' | 'INVALID' | 'PENDING' | 'DISABLED';
     }> = computed(() => {
-        let obj: { [key: string]: FormControlStatus } = {};
-        for (let i = 0; i < this.controls().length; i++) {
-            let controlName = this.controlNames()[i];
-            let controlValidity = this.controls()[i].status;
-
-            obj[controlName] = controlValidity;
-        }
-        console.log(obj);
-        return obj;
+        return this.formUtil.mapNamesToValidity(
+            this.controls(),
+            this.controlNames()
+        );
     });
 
     controlNames: Signal<string[]> = computed(() => {
