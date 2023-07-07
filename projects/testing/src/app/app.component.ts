@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-    FormBuilder,
-    NonNullableFormBuilder,
-    FormGroup,
-    Validators,
-    FormControl,
-} from '@angular/forms';
+import { NonNullableFormBuilder, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -20,6 +14,7 @@ export class AppComponent implements OnInit {
         nickname: [''],
     });
     snippet = '<pre>{{form.value | json}}</pre>';
+
     constructor(private fb: NonNullableFormBuilder) {}
 
     ngOnInit() {}

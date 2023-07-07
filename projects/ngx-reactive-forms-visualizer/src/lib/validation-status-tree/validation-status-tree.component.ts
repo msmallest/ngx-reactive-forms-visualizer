@@ -6,18 +6,16 @@ import {
     computed,
     signal,
 } from '@angular/core';
-import {
-    AbstractControl,
-    FormControl,
-    FormControlStatus,
-    FormGroup,
-} from '@angular/forms';
+import { AbstractControl, FormControlStatus, FormGroup } from '@angular/forms';
 import { FormUtilService } from '../internal/services/form-utils.service';
 
 @Component({
     selector: 'lib-validation-status-tree',
-    templateUrl: './validation-status-tree.component.html',
-    styleUrls: ['./validation-status-tree.component.scss'],
+    template: `
+        <pre>{{ this.namesToValidity() | json }}</pre>
+        <pre>Validity: {{ formGroupElement.status | json }}</pre>
+    `,
+    styles: [],
 })
 export class ValidationStatusTreeComponent implements OnInit {
     @Input({ required: true })

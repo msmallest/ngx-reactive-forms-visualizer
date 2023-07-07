@@ -3,8 +3,8 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'lib-basic-pre',
-    templateUrl: './basic-pre.component.html',
-    styleUrls: ['./basic-pre.component.scss'],
+    template: `<pre>{{ formGroupInput.value | json }}</pre>`,
+    styles: [],
 })
 export class BasicPreComponent {
     @Input({ required: true })
