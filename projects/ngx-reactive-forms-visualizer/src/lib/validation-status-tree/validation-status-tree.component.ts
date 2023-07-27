@@ -6,11 +6,14 @@ import {
     computed,
     signal,
 } from '@angular/core';
-import { AbstractControl, FormControlStatus, FormGroup } from '@angular/forms';
+import { AbstractControl, FormGroup } from '@angular/forms';
 import { FormUtilService } from '../internal/services/form-utils.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'lib-validation-status-tree',
+    standalone: true,
+    imports: [CommonModule],
     template: `
         <pre>{{ this.namesToValidity() | json }}</pre>
         <pre>Validity: {{ formGroupElement.status | json }}</pre>

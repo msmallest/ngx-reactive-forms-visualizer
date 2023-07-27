@@ -9,11 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 
-import {
-    BasicPreModule,
-    ValidationStatusTreeModule,
-} from 'ngx-reactive-forms-visualizer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+    BasicPreComponent,
+    ValidationStatusTreeComponent,
+} from 'ngx-reactive-forms-visualizer';
 
 @NgModule({
     declarations: [AppComponent],
@@ -21,8 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        BasicPreModule,
-        ValidationStatusTreeModule,
+        BasicPreComponent,
+        ValidationStatusTreeComponent,
         FormsModule,
         ReactiveFormsModule,
         MatFormFieldModule,
