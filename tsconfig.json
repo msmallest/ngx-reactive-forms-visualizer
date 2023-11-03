@@ -12,7 +12,8 @@
         "noFallthroughCasesInSwitch": true,
         "sourceMap": true,
         "paths": {
-            "ngx-reactive-forms-visualizer": ["dist/ngx-reactive-forms-visualizer"]
+            "ngx-reactive-forms-visualizer": ["dist/ngx-reactive-forms-visualizer"],
+            "modelsZZZZ/*": ["projects/testing/src/app/models/*"]
         },
         "declaration": false,
         "downlevelIteration": true,

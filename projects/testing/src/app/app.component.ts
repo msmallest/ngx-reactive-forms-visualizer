@@ -6,6 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { NgIf, JsonPipe } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TestClass } from 'modelsZZZZ/test-model.model';
 
 @Component({
     selector: 'app-root',
@@ -33,6 +34,8 @@ export class AppComponent implements OnInit {
         nickname: [''],
     });
     snippet = '<pre>{{form.value | json}}</pre>';
+
+    thing!: TestClass
 
     constructor(private fb: NonNullableFormBuilder) {}
 
