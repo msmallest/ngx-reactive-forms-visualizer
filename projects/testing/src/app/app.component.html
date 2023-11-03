@@ -5,15 +5,9 @@
     <form [formGroup]="exampleForm" id="main-form">
         <mat-form-field>
             <mat-label>Name: </mat-label>
-            <input
-                matInput
-                placeholder="name"
-                [formControl]="exampleForm.controls.name"
-            />
+            <input matInput placeholder="name" [formControl]="exampleForm.controls.name" />
         </mat-form-field>
-        <mat-error
-            *ngIf="exampleForm.controls.name.errors?.['required'] && exampleForm.touched"
-        >
+        <mat-error *ngIf="exampleForm.controls.name.errors?.['required'] && exampleForm.touched">
             Name is required
         </mat-error>
     </form>
@@ -31,8 +25,7 @@
                     ><code>{{ snippet }}</code></mat-card-title
                 >
                 <mat-card-subtitle>
-                    When working on reactive forms in Angular, a common way to
-                    visualize reactive forms is by using
+                    When working on reactive forms in Angular, a common way to visualize reactive forms is by using
                     <code>{{ snippet }}</code></mat-card-subtitle
                 >
             </mat-card-header>
@@ -41,8 +34,7 @@
                 <pre>{{ exampleForm.value | json }}</pre>
 
                 <p>
-                    This library is about taking that idea of displaying the
-                    form's data in templates to the next level.
+                    This library is about taking that idea of displaying the form's data in templates to the next level.
                 </p>
             </mat-card-content>
         </mat-card>
@@ -52,10 +44,7 @@
         <mat-card>
             <mat-card-header>
                 <mat-card-title><code>lib-basic-pre</code></mat-card-title>
-                <mat-card-subtitle
-                    >Here is the same code but in the library's most basic
-                    component</mat-card-subtitle
-                >
+                <mat-card-subtitle>Here is the same code but in the library's most basic component</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
                 <lib-basic-pre [formGroupInput]="exampleForm"></lib-basic-pre>
@@ -66,18 +55,11 @@
     <div id="example-librarys-validationstatustree" class="example-section">
         <mat-card>
             <mat-card-header>
-                <mat-card-title
-                    ><code>lib-validation-status-tree</code></mat-card-title
-                >
-                <mat-card-subtitle
-                    >Each form field's status and the form's overall
-                    status</mat-card-subtitle
-                >
+                <mat-card-title><code>lib-validation-status-tree</code></mat-card-title>
+                <mat-card-subtitle>Each form field's status and the form's overall status</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                <lib-validation-status-tree
-                    [formGroupElement]="exampleForm"
-                ></lib-validation-status-tree>
+                <lib-validation-status-tree [formGroupElement]="exampleForm"></lib-validation-status-tree>
             </mat-card-content>
         </mat-card>
     </div>

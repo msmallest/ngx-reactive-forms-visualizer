@@ -20,7 +20,7 @@ export class FormUtilService {
 
     getControls(formGroup: FormGroup) {
         let controlsArr: AbstractControl[] = [];
-        Object.keys(formGroup.controls).forEach((key) => {
+        Object.keys(formGroup.controls).forEach(key => {
             if (formGroup.get(key)) {
                 controlsArr.push(formGroup.controls[key]);
             }
@@ -30,10 +30,7 @@ export class FormUtilService {
 
     // High level utilities
 
-    mapNamesToValidity(
-        controls: AbstractControl<any, any>[],
-        controlNames: string[]
-    ) {
+    mapNamesToValidity(controls: AbstractControl<any, any>[], controlNames: string[]) {
         let obj: { [key: string]: FormControlStatus } = {};
         for (let i = 0; i < controls.length; i++) {
             let controlName = controlNames[i];

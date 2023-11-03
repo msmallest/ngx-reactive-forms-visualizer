@@ -1,11 +1,4 @@
-import {
-    Component,
-    Input,
-    OnInit,
-    Signal,
-    computed,
-    signal,
-} from '@angular/core';
+import { Component, Input, OnInit, Signal, computed, signal } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { FormUtilService } from '../internal/services/form-utils.service';
 import { CommonModule } from '@angular/common';
@@ -31,10 +24,7 @@ export class ValidationStatusTreeComponent implements OnInit {
     namesToValidity: Signal<{
         [key: string]: 'VALID' | 'INVALID' | 'PENDING' | 'DISABLED';
     }> = computed(() => {
-        return this.formUtil.mapNamesToValidity(
-            this.controls(),
-            this.controlNames()
-        );
+        return this.formUtil.mapNamesToValidity(this.controls(), this.controlNames());
     });
 
     controlNames: Signal<string[]> = computed(() => {
@@ -47,7 +37,7 @@ export class ValidationStatusTreeComponent implements OnInit {
 
     ngOnInit() {
         this.form.set(this.formGroupElement);
-        this.formGroupElement.valueChanges.subscribe((formGroupChange) => {
+        this.formGroupElement.valueChanges.subscribe(formGroupChange => {
             this.form.set(this.formGroupElement);
         });
     }

@@ -12,9 +12,7 @@
         "noFallthroughCasesInSwitch": true,
         "sourceMap": true,
         "paths": {
-            "ngx-reactive-forms-visualizer": [
-                "dist/ngx-reactive-forms-visualizer"
-            ]
+            "ngx-reactive-forms-visualizer": ["dist/ngx-reactive-forms-visualizer"]
         },
         "declaration": false,
         "downlevelIteration": true,

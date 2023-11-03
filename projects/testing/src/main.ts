@@ -1,6 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-
 import { importProvidersFrom } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { MatCardModule } from '@angular/material/card';
@@ -15,8 +14,16 @@ import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatDividerModule, MatCardModule),
-        provideAnimations()
-    ]
-})
-    .catch((err) => console.error(err));
+        importProvidersFrom(
+            BrowserModule,
+            AppRoutingModule,
+            FormsModule,
+            ReactiveFormsModule,
+            MatFormFieldModule,
+            MatInputModule,
+            MatDividerModule,
+            MatCardModule
+        ),
+        provideAnimations(),
+    ],
+}).catch(err => console.error(err));
