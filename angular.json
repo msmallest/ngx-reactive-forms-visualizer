@@ -118,7 +118,7 @@
                         "tsConfig": "projects/testing/tsconfig.spec.json",
                         "inlineStyleLanguage": "scss",
                         "assets": ["projects/testing/src/favicon.ico", "projects/testing/src/assets"],
-                        "styles": ["projects/testing/src/styles.scss", "src/theme.scss"],
+                        "styles": ["projects/testing/src/styles.scss", "projects/testing/src/theme.scss"],
                         "scripts": []
                     }
                 },
