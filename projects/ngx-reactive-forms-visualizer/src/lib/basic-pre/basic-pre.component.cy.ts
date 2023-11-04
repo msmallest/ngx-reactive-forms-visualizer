@@ -1,8 +1,8 @@
 import { MountConfig } from 'cypress/angular';
-import { BasicPreComponent } from 'ngx-reactive-forms-visualizer';
 import { FormControl, FormGroup } from '@angular/forms';
+import { BasicPreComponent } from './basic-pre.component';
 
-describe('HeaderComponent', () => {
+describe('BasicPreComponent', () => {
     const config: MountConfig<BasicPreComponent> = {
         imports: [BasicPreComponent],
         componentProperties: {
