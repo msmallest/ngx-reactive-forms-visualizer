@@ -13,5 +13,7 @@ export class BasicPreComponent {
     @Input({ required: true })
     formGroupInput!: FormGroup;
 
+    arr = ['1', '2']
+
     constructor() {}
 }

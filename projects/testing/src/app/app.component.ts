@@ -37,6 +37,8 @@ export class AppComponent implements OnInit {
 
     thing!: TestClass
 
+    arr = ['1', '2']
+
     constructor(private fb: NonNullableFormBuilder) {}
 
     ngOnInit() {}
