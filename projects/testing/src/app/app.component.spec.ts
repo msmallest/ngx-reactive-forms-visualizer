@@ -1,5 +1,5 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import {AppComponent} from './app.component'
+import { AppComponent } from './app.component';
 
 describe('Commponent: App', () => {
     let component: AppComponent;
@@ -7,9 +7,7 @@ describe('Commponent: App', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [
-                AppComponent
-            ]
+            imports: [AppComponent],
         });
 
         // create component and test fixture
@@ -20,6 +18,6 @@ describe('Commponent: App', () => {
     });
 
     it('has arr len 2', () => {
-        expect(component.arr.length).toBe(2)
+        expect(component.arr.length).toBe(2);
     });
 });
