@@ -1,5 +1,9 @@
 const { BettererFileTest } = require('@betterer/betterer');
 const { BettererError } = require('@betterer/errors');
+
+const { BettererTest } = require('@betterer/betterer');
+const { bigger, smaller } = require('@betterer/constraints');
+
 const fs = require('node:fs').promises;
 
 function regexp(pattern, issueMessage = 'RegExp match') {
@@ -45,7 +49,6 @@ function getFileMatches(pattern, fileText) {
     return matches;
 }
 
-// TODO - run:
 // npm run betterer
 module.exports = {
     'No TODOs': () => regexp(/(\/\/\s*TODO)/i).include('./**/*.ts')

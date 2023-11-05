@@ -10,6 +10,7 @@ describe('AppComponent', () => {
         }
     }
 
+    // TODO d
     it('mounts', () => {
         cy.mount(AppComponent, config)
     });

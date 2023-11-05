@@ -37,6 +37,9 @@ export class AppComponent implements OnInit {
 
     thing!: TestClass
 
+    stuff = null;
+
+    // TODO dasdasdas
     arr = ['1', '2']
 
     constructor(private fb: NonNullableFormBuilder) {}
