@@ -7,6 +7,7 @@ import { NgIf, JsonPipe } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TestClass } from 'modelsZZZZ/test-model.model';
+import { TestComponent } from './test/test.component';
 
 @Component({
     selector: 'app-root',
@@ -24,6 +25,7 @@ import { TestClass } from 'modelsZZZZ/test-model.model';
         BasicPreComponent,
         ValidationStatusTreeComponent,
         JsonPipe,
+        TestComponent,
     ],
 })
 export class AppComponent {
