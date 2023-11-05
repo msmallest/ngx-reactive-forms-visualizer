@@ -7,12 +7,12 @@ describe('BasicPreComponent', () => {
         imports: [BasicPreComponent],
         componentProperties: {
             formGroupInput: new FormGroup({
-                ctrl: new FormControl('a')
-            })
-        }
-    }
+                ctrl: new FormControl('a'),
+            }),
+        },
+    };
 
     it('mounts', () => {
-        cy.mount(BasicPreComponent, config)
+        cy.mount(BasicPreComponent, config);
     });
 });

@@ -5,13 +5,11 @@ import { AbstractControl, FormControlStatus, FormGroup } from '@angular/forms';
     providedIn: 'root',
 })
 export class FormUtilService {
-    constructor() {}
-
     // Low level utilities
 
     getControlNames(formGroup: FormGroup) {
-        let namesArr: string[] = [];
-        for (var property in formGroup.controls) {
+        const namesArr: string[] = [];
+        for (const property in formGroup.controls) {
             namesArr.push(property);
         }
         console.log(namesArr);
@@ -19,7 +17,7 @@ export class FormUtilService {
     }
 
     getControls(formGroup: FormGroup) {
-        let controlsArr: AbstractControl[] = [];
+        const controlsArr: AbstractControl[] = [];
         Object.keys(formGroup.controls).forEach(key => {
             if (formGroup.get(key)) {
                 controlsArr.push(formGroup.controls[key]);
@@ -31,10 +29,10 @@ export class FormUtilService {
     // High level utilities
 
     mapNamesToValidity(controls: AbstractControl<any, any>[], controlNames: string[]) {
-        let obj: { [key: string]: FormControlStatus } = {};
+        const obj: { [key: string]: FormControlStatus } = {};
         for (let i = 0; i < controls.length; i++) {
-            let controlName = controlNames[i];
-            let controlValidity = controls[i].status;
+            const controlName = controlNames[i];
+            const controlValidity = controls[i].status;
 
             obj[controlName] = controlValidity;
         }

@@ -26,7 +26,7 @@ import { TestClass } from 'modelsZZZZ/test-model.model';
         JsonPipe,
     ],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     exampleForm = this.fb.group({
         name: ['', Validators.required],
         town: [''],
@@ -35,14 +35,12 @@ export class AppComponent implements OnInit {
     });
     snippet = '<pre>{{form.value | json}}</pre>';
 
-    thing!: TestClass
+    thing!: TestClass;
 
     stuff = null;
 
     // TODO dasdasdas
-    arr = ['1', '2']
+    arr = ['1', '2'];
 
     constructor(private fb: NonNullableFormBuilder) {}
-
-    ngOnInit() {}
 }
