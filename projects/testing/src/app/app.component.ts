@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NonNullableFormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BasicPreComponent, ValidationStatusTreeComponent } from 'ngx-reactive-forms-visualizer';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgIf, JsonPipe } from '@angular/common';
@@ -8,6 +7,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TestClass } from 'modelsZZZZ/test-model.model';
 import { TestComponent } from './test/test.component';
+import { BasicPreComponent, ValidationStatusTreeComponent } from 'ngx-reactive-forms-visualizer';
+// import { BasicPreComponent, ValidationStatusTreeComponent } from 'dist/ngx-reactive-forms-visualizer';
+// import { BasicPreComponent, ValidationStatusTreeComponent } from 'projects/ngx-reactive-forms-visualizer';
 
 @Component({
     selector: 'app-root',
@@ -41,7 +43,6 @@ export class AppComponent {
 
     stuff = null;
 
-    // TODO dasdasdas
     arr = ['1', '2'];
 
     constructor(private fb: NonNullableFormBuilder) {}

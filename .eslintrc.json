@@ -27,6 +27,25 @@
                         "prefix": "app",
                         "style": "kebab-case"
                     }
+                ],
+                "no-restricted-imports": [
+                    "error",
+                    {
+                        "patterns": [
+                            {
+                                "group": ["projects/*"],
+                                "message": "Import relative to the project or directly from the library"
+                            },
+                            {
+                                "group": ["*/**/public-api"],
+                                "message": "Do not import directly from the `public-api`"
+                            },
+                            {
+                                "group": ["dist/*"],
+                                "message": "Do not import from `dist/`"
+                            }
+                        ]
+                    }
                 ]
             }
         },

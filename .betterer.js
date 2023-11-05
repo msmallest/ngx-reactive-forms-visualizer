@@ -17,6 +17,7 @@ function regexp(pattern, issueMessage = 'RegExp match') {
         }
 
         pattern = new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : `${pattern.flags}g`);
+        console.log(pattern)
         await Promise.all(
             filePaths.map(async (filePath) => {
                 const fileText = await fs.readFile(filePath, 'utf8');
@@ -51,5 +52,8 @@ function getFileMatches(pattern, fileText) {
 
 // npm run betterer
 module.exports = {
-    'No TODOs': () => regexp(/(\/\/\s*TODO)/i).include('./**/*.ts')
+    'No TODOs': () => regexp(/(\/\/\s*TODO)/i).include('./**/*.ts'),
+    'No \'projects/*\' imports': () => regexp(/(\/\/\s*import {.*} from 'projects\/.*;)/i).include('./**/*.ts'),
+    'No \'*/**/public-api\' imports': () => regexp(/(\/\/\s*.*\/public-api)/i).include('./**/*.ts'),
+    'No \'dist\' imports': () => regexp(/(\/\/\s*import {.*} from 'dist\/.*;)/i).include('./**/*.ts'),
 };
