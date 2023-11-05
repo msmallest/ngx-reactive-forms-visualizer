@@ -28,6 +28,23 @@
                         "style": "kebab-case"
                     }
                 ],
+                "@angular-eslint/use-component-view-encapsulation" : [
+                    "error"
+                ],
+                "@angular-eslint/no-pipe-impure" : [
+                    "error"
+                ],
+                "@angular-eslint/use-lifecycle-interface": [
+                    "error"
+                ],
+                "@angular-eslint/pipe-prefix": [
+                    "error",
+                    {
+                        "prefixes": [
+                            "app"
+                        ]
+                    }
+                ],
                 "no-restricted-imports": [
                     "error",
                     {
