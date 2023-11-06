@@ -7,9 +7,7 @@ describe('Commponent: Basic Pre', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [
-                BasicPreComponent
-            ]
+            imports: [BasicPreComponent],
         });
 
         // create component and test fixture
@@ -20,6 +18,6 @@ describe('Commponent: Basic Pre', () => {
     });
 
     it('has arr len 2', () => {
-        expect(component.arr.length).toBe(2)
+        expect(component.arr.length).toBe(2);
     });
 });

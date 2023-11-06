@@ -1,138 +1,227 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "newProjectRoot": "projects",
-    "projects": {
-        "ngx-reactive-forms-visualizer": {
-            "projectType": "library",
-            "root": "projects/ngx-reactive-forms-visualizer",
-            "sourceRoot": "projects/ngx-reactive-forms-visualizer/src",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:ng-packagr",
-                    "options": {
-                        "project": "projects/ngx-reactive-forms-visualizer/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "tsConfig": "projects/ngx-reactive-forms-visualizer/tsconfig.lib.prod.json"
-                        },
-                        "development": {
-                            "tsConfig": "projects/ngx-reactive-forms-visualizer/tsconfig.lib.json"
-                        }
-                    },
-                    "defaultConfiguration": "production"
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "tsConfig": "projects/ngx-reactive-forms-visualizer/tsconfig.spec.json",
-                        "polyfills": ["zone.js", "zone.js/testing"]
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-eslint/builder:lint",
-                    "options": {
-                        "lintFilePatterns": [
-                            "projects/ngx-reactive-forms-visualizer/**/*.ts",
-                            "projects/ngx-reactive-forms-visualizer/**/*.html"
-                        ]
-                    }
-                }
-            }
-        },
-        "testing": {
-            "projectType": "application",
-            "schematics": {
-                "@schematics/angular:component": {
-                    "style": "scss"
-                }
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-reactive-forms-visualizer": {
+      "projectType": "library",
+      "root": "projects/ngx-reactive-forms-visualizer",
+      "sourceRoot": "projects/ngx-reactive-forms-visualizer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-reactive-forms-visualizer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-reactive-forms-visualizer/tsconfig.lib.prod.json"
             },
-            "root": "projects/testing",
-            "sourceRoot": "projects/testing/src",
-            "prefix": "app",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/testing",
-                        "index": "projects/testing/src/index.html",
-                        "main": "projects/testing/src/main.ts",
-                        "polyfills": ["zone.js"],
-                        "tsConfig": "projects/testing/tsconfig.app.json",
-                        "inlineStyleLanguage": "scss",
-                        "assets": ["projects/testing/src/favicon.ico", "projects/testing/src/assets"],
-                        "styles": ["projects/testing/src/styles.scss", "projects/testing/src/theme.scss"],
-                        "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "budgets": [
-                                {
-                                    "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
-                                },
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
-                                }
-                            ],
-                            "outputHashing": "all"
-                        },
-                        "development": {
-                            "buildOptimizer": false,
-                            "optimization": false,
-                            "vendorChunk": true,
-                            "extractLicenses": false,
-                            "sourceMap": true,
-                            "namedChunks": true
-                        }
-                    },
-                    "defaultConfiguration": "production"
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "testing:build:production"
-                        },
-                        "development": {
-                            "browserTarget": "testing:build:development"
-                        }
-                    },
-                    "defaultConfiguration": "development"
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "testing:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "polyfills": ["zone.js", "zone.js/testing"],
-                        "tsConfig": "projects/testing/tsconfig.spec.json",
-                        "inlineStyleLanguage": "scss",
-                        "assets": ["projects/testing/src/favicon.ico", "projects/testing/src/assets"],
-                        "styles": ["projects/testing/src/styles.scss", "projects/testing/src/theme.scss"],
-                        "scripts": []
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-eslint/builder:lint",
-                    "options": {
-                        "lintFilePatterns": ["projects/testing/**/*.ts", "projects/testing/**/*.html"]
-                    }
-                }
+            "development": {
+              "tsConfig": "projects/ngx-reactive-forms-visualizer/tsconfig.lib.json"
             }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-reactive-forms-visualizer/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-reactive-forms-visualizer/**/*.ts",
+              "projects/ngx-reactive-forms-visualizer/**/*.html"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ngx-reactive-forms-visualizer/.storybook",
+            "browserTarget": "ngx-reactive-forms-visualizer:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-reactive-forms-visualizer"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ngx-reactive-forms-visualizer/.storybook",
+            "browserTarget": "ngx-reactive-forms-visualizer:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-reactive-forms-visualizer"
+            ],
+            "outputDir": "dist/storybook/ngx-reactive-forms-visualizer"
+          }
         }
+      }
     },
-    "cli": {
-        "analytics": "ecbb1414-effb-4c67-86c6-ac03cbbd175e",
-        "schematicCollections": ["@angular-eslint/schematics"]
+    "testing": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/testing",
+      "sourceRoot": "projects/testing/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/testing",
+            "index": "projects/testing/src/index.html",
+            "main": "projects/testing/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/testing/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/testing/src/favicon.ico",
+              "projects/testing/src/assets"
+            ],
+            "styles": [
+              "projects/testing/src/styles.scss",
+              "projects/testing/src/theme.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "testing:build:production"
+            },
+            "development": {
+              "browserTarget": "testing:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "testing:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/testing/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/testing/src/favicon.ico",
+              "projects/testing/src/assets"
+            ],
+            "styles": [
+              "projects/testing/src/styles.scss",
+              "projects/testing/src/theme.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/testing/**/*.ts",
+              "projects/testing/**/*.html"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/testing/.storybook",
+            "browserTarget": "testing:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/testing"
+            ],
+            "port": 6006,
+            "styles": [
+                "projects/testing/src/styles.scss",
+                "projects/testing/src/theme.scss"
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/testing/.storybook",
+            "browserTarget": "testing:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/testing"
+            ],
+            "outputDir": "dist/storybook/testing"
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "ecbb1414-effb-4c67-86c6-ac03cbbd175e",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
+  }
 }
