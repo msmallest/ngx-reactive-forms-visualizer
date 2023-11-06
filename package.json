@@ -39,6 +39,14 @@
     "@angular/cli": "~16.1.0",
     "@angular/compiler-cli": "^16.1.0",
     "@betterer/cli": "^5.4.0",
+    "@compodoc/compodoc": "^1.1.22",
+    "@storybook/addon-docs": "^7.5.2",
+    "@storybook/addon-essentials": "^7.5.2",
+    "@storybook/addon-interactions": "^7.5.2",
+    "@storybook/addon-links": "^7.5.2",
+    "@storybook/angular": "^7.5.2",
+    "@storybook/blocks": "^7.5.2",
+    "@storybook/testing-library": "^0.2.2",
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
@@ -46,6 +54,7 @@
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-storybook": "^0.6.15",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -55,6 +64,9 @@
     "ng-packagr": "^16.1.0",
     "prettier": "^3.0.3",
     "prettier-eslint": "^16.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.5.2",
     "typescript": "~5.1.3"
   }
 }
