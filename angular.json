@@ -193,7 +193,11 @@
               "-d",
               "projects/testing"
             ],
-            "port": 6006
+            "port": 6006,
+            "styles": [
+                "projects/testing/src/styles.scss",
+                "projects/testing/src/theme.scss"
+            ]
           }
         },
         "build-storybook": {

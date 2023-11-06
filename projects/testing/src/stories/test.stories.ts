@@ -1,6 +1,5 @@
 import type { Meta, Story } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
-import { FormControl, FormGroup } from '@angular/forms';
 import { TestComponent } from '../app/test/test.component';
 
 export default {

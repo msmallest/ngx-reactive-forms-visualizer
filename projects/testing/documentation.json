@@ -599,7 +599,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-443093b61e314d870ce0093543a22de1d0538cf0279b86b68cb286c785cad1961ce0251066c303edde835572edafb242b09d859b3ae22a25fca674f1b8242271",
+            "id": "component-TestComponent-302e935701180a642ff163fd965348b983b223913849c54d0492ecbd10d0234f648dd38be1f39111ae80ba87900b8398ae6ca30c67e45ea71ec12f48f5d93371",
             "file": "projects/testing/src/app/test/test.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -609,13 +609,53 @@
             "selector": "app-test",
             "styleUrls": [],
             "styles": [],
-            "template": "<div>\n    <p>Call pipe {{ stuff | call: capsThis }}</p>\n    <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n    <button (click)=\"setType('solid')\">make solid</button>\n    <button (click)=\"setType('liquid')\">make liquid</button>\n</div>\n",
+            "template": "<div>\n    <p>Call pipe {{ stuff | call: capsThis }}</p>\n    <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n    <button (click)=\"setType('solid')\">make solid</button>\n    <button (click)=\"setType('liquid')\">make liquid</button>\n</div>\n<div>\n    <p>count: {{ count() }}</p>\n    <p>doubleCount: {{ doubleCount() }}</p>\n    <hr />\n    <p>countObj: {{ countObj().count }}</p>\n    <p>doubleCountObj: {{ doubleCountObj().count }}</p>\n    <button (click)=\"updateValue()\" mat-raised-button color=\"primary\">update value</button>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
+                {
+                    "name": "count",
+                    "defaultValue": "signal(1)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WritableSignal<number>",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "countObj",
+                    "defaultValue": "signal({\n        name: 'thingy',\n        count: 1,\n    })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WritableSignal<literal type>",
+                    "optional": false,
+                    "description": "",
+                    "line": 48
+                },
+                {
+                    "name": "doubleCount",
+                    "defaultValue": "computed(() => this.count() * 2)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Signal<number>",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "doubleCountObj",
+                    "defaultValue": "computed(() => {\n        return { name: this.countObj().name, count: this.countObj().count * 2 };\n    })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Signal<literal type>",
+                    "optional": false,
+                    "description": "",
+                    "line": 52
+                },
                 {
                     "name": "stuff",
                     "defaultValue": "'stuff'",
@@ -624,7 +664,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 29
                 },
                 {
                     "name": "type",
@@ -634,7 +674,7 @@
                     "type": "\"solid\" | \"liquid\"",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 31
                 }
             ],
             "methodsClass": [
@@ -651,7 +691,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -686,7 +726,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -724,7 +764,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -738,6 +778,16 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "updateValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -757,12 +807,16 @@
                 {
                     "name": "ApplyPipe",
                     "type": "pipe"
+                },
+                {
+                    "name": "MatButtonModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CallPipe, ApplyPipe } from 'ngxtension/call-apply';\n\n@Component({\n    selector: 'app-test',\n    standalone: true,\n    imports: [CommonModule, CallPipe, ApplyPipe],\n    template: `\n        <div>\n            <p>Call pipe {{ stuff | call: capsThis }}</p>\n            <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n            <button (click)=\"setType('solid')\">make solid</button>\n            <button (click)=\"setType('liquid')\">make liquid</button>\n        </div>\n    `,\n    styles: [],\n})\nexport class TestComponent {\n    stuff = 'stuff';\n\n    type: 'solid' | 'liquid' = 'solid';\n\n    setType(type: 'solid' | 'liquid') {\n        this.type = type;\n    }\n\n    capsThis(thing: string) {\n        return thing.toUpperCase();\n    }\n\n    getTargetFieldPlaceholder(type: 'solid' | 'liquid', extraPrompt?: string) {\n        return (type === 'solid' ? 'fork' : 'spoon') + (extraPrompt ?? '');\n    }\n}\n",
+            "sourceCode": "import { Component, Signal, WritableSignal, computed, signal } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CallPipe, ApplyPipe } from 'ngxtension/call-apply';\nimport { MatButtonModule } from '@angular/material/button';\n\n@Component({\n    selector: 'app-test',\n    standalone: true,\n    imports: [CommonModule, CallPipe, ApplyPipe, MatButtonModule],\n    template: `\n        <div>\n            <p>Call pipe {{ stuff | call: capsThis }}</p>\n            <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n            <button (click)=\"setType('solid')\">make solid</button>\n            <button (click)=\"setType('liquid')\">make liquid</button>\n        </div>\n        <div>\n            <p>count: {{ count() }}</p>\n            <p>doubleCount: {{ doubleCount() }}</p>\n            <hr />\n            <p>countObj: {{ countObj().count }}</p>\n            <p>doubleCountObj: {{ doubleCountObj().count }}</p>\n            <button (click)=\"updateValue()\" mat-raised-button color=\"primary\">update value</button>\n        </div>\n    `,\n    styles: [],\n})\nexport class TestComponent {\n    stuff = 'stuff';\n\n    type: 'solid' | 'liquid' = 'solid';\n\n    setType(type: 'solid' | 'liquid') {\n        this.type = type;\n    }\n\n    capsThis(thing: string) {\n        return thing.toUpperCase();\n    }\n\n    getTargetFieldPlaceholder(type: 'solid' | 'liquid', extraPrompt?: string) {\n        return (type === 'solid' ? 'fork' : 'spoon') + (extraPrompt ?? '');\n    }\n\n    count: WritableSignal<number> = signal(1);\n    doubleCount: Signal<number> = computed(() => this.count() * 2);\n\n    countObj: WritableSignal<{ name: string; count: number }> = signal({\n        name: 'thingy',\n        count: 1,\n    });\n    doubleCountObj: Signal<{ name: string; count: number }> = computed(() => {\n        return { name: this.countObj().name, count: this.countObj().count * 2 };\n    });\n\n    updateValue() {\n        this.count.update(value => value + 1);\n        this.countObj.update(value => {\n            return { name: value.name, count: value.count + 1 };\n        });\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -809,6 +863,16 @@
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "BasicPre",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/testing/src/stories/test.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TestComponent>",
+                "defaultValue": "(args: TestComponent) => {\n    return {\n        component: TestComponent,\n        template: `<app-test />`,\n        props: {\n            ...args,\n        },\n    };\n}"
+            },
             {
                 "name": "Large",
                 "ctype": "miscellaneous",
@@ -920,6 +984,16 @@
                 "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
             },
             {
+                "name": "SimpleState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/testing/src/stories/test.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "BasicPre.bind({})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -968,6 +1042,28 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/testing/src/stories/test.stories.ts": [
+                {
+                    "name": "BasicPre",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/testing/src/stories/test.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TestComponent>",
+                    "defaultValue": "(args: TestComponent) => {\n    return {\n        component: TestComponent,\n        template: `<app-test />`,\n        props: {\n            ...args,\n        },\n    };\n}"
+                },
+                {
+                    "name": "SimpleState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/testing/src/stories/test.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "BasicPre.bind({})"
+                }
+            ],
             "projects/testing/src/stories/Button.stories.ts": [
                 {
                     "name": "Large",
@@ -1143,7 +1239,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -1189,7 +1285,7 @@
                 "linktype": "component",
                 "name": "TestComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -1336,6 +1432,26 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/testing/src/stories/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BasicPre",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/testing/src/stories/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             }
         ]
