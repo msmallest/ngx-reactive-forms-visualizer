@@ -63,6 +63,17 @@
                             }
                         ]
                     }
+                ],
+                "no-restricted-syntax": [
+                    "error",
+                    {
+                        "selector": "CallExpression[callee.name='effect']",
+                        "message": "Angular Signals `effect(() => {})` is not stable yet, event in v17"
+                    },
+                    {
+                        "selector": "MemberExpression > Identifier[name='mutate']",
+                        "message": "Angular Signals `mutate()` was deprecated before v17"
+                    }
                 ]
             }
         },
