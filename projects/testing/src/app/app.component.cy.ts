@@ -6,12 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 describe('AppComponent', () => {
     const config: MountConfig<AppComponent> = {
         imports: [AppComponent, BrowserAnimationsModule],
-        componentProperties: {
-        }
-    }
+        componentProperties: {},
+    };
 
     // TODO d
     it('mounts', () => {
-        cy.mount(AppComponent, config)
+        cy.mount(AppComponent, config);
     });
 });
