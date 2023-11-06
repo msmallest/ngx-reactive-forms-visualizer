@@ -13,7 +13,7 @@ exports[`No TODOs`] = {
 
 exports[`No \'projects/*\' imports`] = {
   value: `{
-    "projects/testing/src/app/app.component.ts:831153700": [
+    "projects/testing/src/app/app.component.ts:1508144124": [
       [11, 0, 109, "RegExp match", "1867984992"]
     ]
   }`
@@ -21,7 +21,7 @@ exports[`No \'projects/*\' imports`] = {
 
 exports[`No \'dist\' imports`] = {
   value: `{
-    "projects/testing/src/app/app.component.ts:831153700": [
+    "projects/testing/src/app/app.component.ts:1508144124": [
       [10, 0, 105, "RegExp match", "1114499788"]
     ]
   }`

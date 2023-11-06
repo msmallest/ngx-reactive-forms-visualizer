@@ -1,5 +1,12 @@
 <h1>ngx-reactive-forms-visualizer</h1>
 
+<p>{{ count() | json }}</p>
+<p>{{ doubleCount() | json }}</p>
+
+<p>{{ countObj() | json }}</p>
+<p>{{ doubleCountObj() | json }}</p>
+<button mat-raised-button color="primary" (click)="updateValue()">Update</button>
+
 <div>
     <app-test></app-test>
 </div>
