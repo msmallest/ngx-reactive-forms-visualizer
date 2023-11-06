@@ -370,6 +370,57 @@
             }
         },
         {
+            "name": "ConfigurableComponentComponent",
+            "id": "component-ConfigurableComponentComponent-97fd6e443407edb9a6ffbdd16cff7515c8e97d4c706a3311e46f5bc600505dc3e7e0c7299280889ada17db8a71ba0ac24d1b93341021ae5dc0155534687b542d",
+            "file": "projects/ngx-reactive-forms-visualizer/src/lib/configurable-component/configurable-component.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-configurable-component",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<h1>{{ title }}</h1>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Title of Page'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n    selector: 'lib-configurable-component',\n    standalone: true,\n    imports: [CommonModule],\n    template: ` <h1>{{ title }}</h1> `,\n    styles: [],\n})\nexport class ConfigurableComponentComponent {\n    title = 'Title of Page';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-3d494fd89671305c6be07de00e019efdf08f2e36c2169e5fb75a5acdb2841da927e3ef3cbd21cc18f478373a784b1fb90e8b63b9df4b3498a75b652bd9c37b38",
             "file": "projects/ngx-reactive-forms-visualizer/src/stories/header.component.ts",
@@ -687,6 +738,16 @@
                 "defaultValue": "(args: BasicPreComponent) => {\n    const formGroup = new FormGroup({\n        type: new FormControl('simple'),\n        groupingLogic: new FormControl('and'),\n    });\n\n    return {\n        component: BasicPreComponent,\n        template: `<lib-basic-pre [formGroupInput]=\"formGroupInput\" />`,\n        props: {\n            ...args,\n            formGroupInput: formGroup,\n        },\n    };\n}"
             },
             {
+                "name": "GroupingLogicComplexTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-reactive-forms-visualizer/src/stories/configurable-component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ConfigurableComponentComponent>",
+                "defaultValue": "(args: ConfigurableComponentComponent) => {\n    return {\n        component: ConfigurableComponentComponent,\n        template: `<lib-configurable-component />`,\n        props: {\n            ...args,\n        },\n    };\n}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -807,6 +868,16 @@
                 "defaultValue": "GroupingLogicComplexTemplate.bind({})"
             },
             {
+                "name": "SimpleState",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-reactive-forms-visualizer/src/stories/configurable-component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "GroupingLogicComplexTemplate.bind({})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -893,6 +964,28 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/ngx-reactive-forms-visualizer/src/stories/basic-pre.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "GroupingLogicComplexTemplate.bind({})"
+                }
+            ],
+            "projects/ngx-reactive-forms-visualizer/src/stories/configurable-component.stories.ts": [
+                {
+                    "name": "GroupingLogicComplexTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-reactive-forms-visualizer/src/stories/configurable-component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ConfigurableComponentComponent>",
+                    "defaultValue": "(args: ConfigurableComponentComponent) => {\n    return {\n        component: ConfigurableComponentComponent,\n        template: `<lib-configurable-component />`,\n        props: {\n            ...args,\n        },\n    };\n}"
+                },
+                {
+                    "name": "SimpleState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-reactive-forms-visualizer/src/stories/configurable-component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -1128,6 +1221,15 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-reactive-forms-visualizer/src/lib/configurable-component/configurable-component.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ConfigurableComponentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-reactive-forms-visualizer/src/lib/internal/services/form-utils.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
@@ -1302,6 +1404,26 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "projects/ngx-reactive-forms-visualizer/src/stories/configurable-component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GroupingLogicComplexTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-reactive-forms-visualizer/src/stories/configurable-component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleState",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "projects/ngx-reactive-forms-visualizer/src/stories/header.component.ts",
