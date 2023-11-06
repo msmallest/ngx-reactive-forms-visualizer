@@ -180,6 +180,36 @@
               "projects/testing/**/*.html"
             ]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/testing/.storybook",
+            "browserTarget": "testing:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/testing"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/testing/.storybook",
+            "browserTarget": "testing:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/testing"
+            ],
+            "outputDir": "dist/storybook/testing"
+          }
         }
       }
     }
