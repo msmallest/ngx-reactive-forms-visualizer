@@ -8,7 +8,7 @@
 <button mat-raised-button color="primary" (click)="updateValue()">Update</button>
 
 <div>
-    <app-test></app-test>
+    <app-test />
 </div>
 <div>
     <p>Type here to interact with examples</p>
@@ -23,7 +23,7 @@
     </form>
 </div>
 
-<mat-divider></mat-divider>
+<mat-divider />
 
 <div id="examples">
     <h2>Examples</h2>
@@ -57,7 +57,7 @@
                 <mat-card-subtitle>Here is the same code but in the library's most basic component</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                <lib-basic-pre [formGroupInput]="exampleForm"></lib-basic-pre>
+                <lib-basic-pre [formGroupInput]="exampleForm" />
             </mat-card-content>
         </mat-card>
     </div>
@@ -69,7 +69,7 @@
                 <mat-card-subtitle>Each form field's status and the form's overall status</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                <lib-validation-status-tree [formGroupElement]="exampleForm"></lib-validation-status-tree>
+                <lib-validation-status-tree [formGroupElement]="exampleForm" />
             </mat-card-content>
         </mat-card>
     </div>

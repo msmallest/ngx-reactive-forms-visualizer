@@ -2,11 +2,12 @@ import { Component, Signal, WritableSignal, computed, signal } from '@angular/co
 import { CommonModule } from '@angular/common';
 import { CallPipe, ApplyPipe } from 'ngxtension/call-apply';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
     selector: 'app-test',
     standalone: true,
-    imports: [CommonModule, CallPipe, ApplyPipe, MatButtonModule],
+    imports: [CommonModule, CallPipe, ApplyPipe, MatButtonModule, MatDividerModule],
     template: `
         <div>
             <p>Call pipe {{ stuff | call: capsThis }}</p>
@@ -14,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
             <button (click)="setType('solid')">make solid</button>
             <button (click)="setType('liquid')">make liquid</button>
         </div>
+        <mat-divider />
         <div>
             <p>count: {{ count() }}</p>
             <p>doubleCount: {{ doubleCount() }}</p>
