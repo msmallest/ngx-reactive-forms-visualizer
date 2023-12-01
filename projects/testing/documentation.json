@@ -301,11 +301,11 @@
                 ]
             },
             "extends": [],
-            "templateData": "<h1>ngx-reactive-forms-visualizer</h1>\n\n<p>{{ count() | json }}</p>\n<p>{{ doubleCount() | json }}</p>\n\n<p>{{ countObj() | json }}</p>\n<p>{{ doubleCountObj() | json }}</p>\n<button mat-raised-button color=\"primary\" (click)=\"updateValue()\">Update</button>\n\n<div>\n    <app-test></app-test>\n</div>\n<div>\n    <p>Type here to interact with examples</p>\n    <form [formGroup]=\"exampleForm\" id=\"main-form\">\n        <mat-form-field>\n            <mat-label>Name: </mat-label>\n            <input matInput placeholder=\"name\" [formControl]=\"exampleForm.controls.name\" />\n        </mat-form-field>\n        <mat-error *ngIf=\"exampleForm.controls.name.errors?.['required'] && exampleForm.touched\">\n            Name is required\n        </mat-error>\n    </form>\n</div>\n\n<mat-divider></mat-divider>\n\n<div id=\"examples\">\n    <h2>Examples</h2>\n\n    <div id=\"example-prejson\" class=\"example-section\">\n        <mat-card>\n            <mat-card-header>\n                <mat-card-title\n                    ><code>{{ snippet }}</code></mat-card-title\n                >\n                <mat-card-subtitle>\n                    When working on reactive forms in Angular, a common way to visualize reactive forms is by using\n                    <code>{{ snippet }}</code></mat-card-subtitle\n                >\n            </mat-card-header>\n\n            <mat-card-content>\n                <pre>{{ exampleForm.value | json }}</pre>\n\n                <p>\n                    This library is about taking that idea of displaying the form's data in templates to the next level.\n                </p>\n            </mat-card-content>\n        </mat-card>\n    </div>\n\n    <div id=\"example-librarys-prejson\" class=\"example-section\">\n        <mat-card>\n            <mat-card-header>\n                <mat-card-title><code>lib-basic-pre</code></mat-card-title>\n                <mat-card-subtitle>Here is the same code but in the library's most basic component</mat-card-subtitle>\n            </mat-card-header>\n            <mat-card-content>\n                <lib-basic-pre [formGroupInput]=\"exampleForm\"></lib-basic-pre>\n            </mat-card-content>\n        </mat-card>\n    </div>\n\n    <div id=\"example-librarys-validationstatustree\" class=\"example-section\">\n        <mat-card>\n            <mat-card-header>\n                <mat-card-title><code>lib-validation-status-tree</code></mat-card-title>\n                <mat-card-subtitle>Each form field's status and the form's overall status</mat-card-subtitle>\n            </mat-card-header>\n            <mat-card-content>\n                <lib-validation-status-tree [formGroupElement]=\"exampleForm\"></lib-validation-status-tree>\n            </mat-card-content>\n        </mat-card>\n    </div>\n</div>\n"
+            "templateData": "<h1>ngx-reactive-forms-visualizer</h1>\n\n<p>{{ count() | json }}</p>\n<p>{{ doubleCount() | json }}</p>\n\n<p>{{ countObj() | json }}</p>\n<p>{{ doubleCountObj() | json }}</p>\n<button mat-raised-button color=\"primary\" (click)=\"updateValue()\">Update</button>\n\n<div>\n    <app-test />\n</div>\n<div>\n    <p>Type here to interact with examples</p>\n    <form [formGroup]=\"exampleForm\" id=\"main-form\">\n        <mat-form-field>\n            <mat-label>Name: </mat-label>\n            <input matInput placeholder=\"name\" [formControl]=\"exampleForm.controls.name\" />\n        </mat-form-field>\n        <mat-error *ngIf=\"exampleForm.controls.name.errors?.['required'] && exampleForm.touched\">\n            Name is required\n        </mat-error>\n    </form>\n</div>\n\n<mat-divider />\n\n<div id=\"examples\">\n    <h2>Examples</h2>\n\n    <div id=\"example-prejson\" class=\"example-section\">\n        <mat-card>\n            <mat-card-header>\n                <mat-card-title\n                    ><code>{{ snippet }}</code></mat-card-title\n                >\n                <mat-card-subtitle>\n                    When working on reactive forms in Angular, a common way to visualize reactive forms is by using\n                    <code>{{ snippet }}</code></mat-card-subtitle\n                >\n            </mat-card-header>\n\n            <mat-card-content>\n                <pre>{{ exampleForm.value | json }}</pre>\n\n                <p>\n                    This library is about taking that idea of displaying the form's data in templates to the next level.\n                </p>\n            </mat-card-content>\n        </mat-card>\n    </div>\n\n    <div id=\"example-librarys-prejson\" class=\"example-section\">\n        <mat-card>\n            <mat-card-header>\n                <mat-card-title><code>lib-basic-pre</code></mat-card-title>\n                <mat-card-subtitle>Here is the same code but in the library's most basic component</mat-card-subtitle>\n            </mat-card-header>\n            <mat-card-content>\n                <lib-basic-pre [formGroupInput]=\"exampleForm\" />\n            </mat-card-content>\n        </mat-card>\n    </div>\n\n    <div id=\"example-librarys-validationstatustree\" class=\"example-section\">\n        <mat-card>\n            <mat-card-header>\n                <mat-card-title><code>lib-validation-status-tree</code></mat-card-title>\n                <mat-card-subtitle>Each form field's status and the form's overall status</mat-card-subtitle>\n            </mat-card-header>\n            <mat-card-content>\n                <lib-validation-status-tree [formGroupElement]=\"exampleForm\" />\n            </mat-card-content>\n        </mat-card>\n    </div>\n</div>\n"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-a53fd738b978780d39fb5fcc9ae4cfe0088e57a1f6ce674862d57dab9192140bd1c05548a9910db0469a431142886e658ff2e761f15781b2ad430e58d64724d0",
+            "id": "component-ButtonComponent-b5aa6407d63bbbd8d72bb85d178a2b0b713a6c60a989e42ff9d31dc4d9c66e3bd7291409ea757d11af02c8c6aaf1118e99eff1a0351bcce5d24632f0881b87a5",
             "file": "projects/testing/src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -317,7 +317,7 @@
                 "./button.css"
             ],
             "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "template": "<button       type=\"button\"\n       (click)=\"onClick.emit($event)\"\n       [ngClass]=\"classes\"\n       [ngStyle]=\"{ 'background-color': backgroundColor }\">\n       {{ label }}\n   </button>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -339,15 +339,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 786,
-                            "end": 799,
+                            "pos": 873,
+                            "end": 888,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 334,
                             "tagName": {
-                                "pos": 787,
-                                "end": 795,
+                                "pos": 874,
+                                "end": 882,
                                 "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -404,7 +404,7 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [
                 {
                     "name": "CommonModule",
@@ -414,7 +414,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n    selector: 'storybook-button',\n    standalone: true,\n    imports: [CommonModule],\n    template: ` <button\n        type=\"button\"\n        (click)=\"onClick.emit($event)\"\n        [ngClass]=\"classes\"\n        [ngStyle]=\"{ 'background-color': backgroundColor }\">\n        {{ label }}\n    </button>`,\n    styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n    /**\n     * Is this the principal call to action on the page?\n     */\n    @Input()\n    primary = false;\n\n    /**\n     * What background color to use\n     */\n    @Input()\n    backgroundColor?: string;\n\n    /**\n     * How large should the button be?\n     */\n    @Input()\n    size: 'small' | 'medium' | 'large' = 'medium';\n\n    /**\n     * Button contents\n     *\n     * @required\n     */\n    @Input()\n    label = 'Button';\n\n    /**\n     * Optional click handler\n     */\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    public get classes(): string[] {\n        const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n        return ['storybook-button', `storybook-button--${this.size}`, mode];\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -438,7 +438,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-3d494fd89671305c6be07de00e019efdf08f2e36c2169e5fb75a5acdb2841da927e3ef3cbd21cc18f478373a784b1fb90e8b63b9df4b3498a75b652bd9c37b38",
+            "id": "component-HeaderComponent-23847d9bce0d0a4ad10fb9b747f353a6fed3075355e18a353a8e1a90152a6e5fb275b4079c18fcdbd1757375a2ad355dbdf04d653cd6568b05e8c429b5e8eff7",
             "file": "projects/testing/src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -450,7 +450,7 @@
                 "./header.css"
             ],
             "styles": [],
-            "template": "<header>    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "template": "<header>        <div class=\"storybook-header\">\n            <div>\n                <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <g fill=\"none\" fillRule=\"evenodd\">\n                        <path\n                            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n                            fill=\"#FFF\" />\n                        <path d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\" fill=\"#555AB9\" />\n                        <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n                    </g>\n                </svg>\n                <h1>Acme</h1>\n            </div>\n            <div>\n                <div *ngIf=\"user\">\n                    <span class=\"welcome\">\n                        Welcome, <b>{{ user.name }}</b\n                        >!\n                    </span>\n                    <storybook-button *ngIf=\"user\" size=\"small\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\" />\n                </div>\n                <div *ngIf=\"!user\">\n                    <storybook-button\n                        *ngIf=\"!user\"\n                        size=\"small\"\n                        class=\"margin-left\"\n                        (onClick)=\"onLogin.emit($event)\"\n                        label=\"Log in\" />\n                    <storybook-button\n                        *ngIf=\"!user\"\n                        primary\n                        size=\"small\"\n                        primary=\"true\"\n                        class=\"margin-left\"\n                        (onClick)=\"onCreateAccount.emit($event)\"\n                        label=\"Sign up\" />\n                </div>\n            </div>\n        </div>\n    </header>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -460,7 +460,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 65,
+                    "line": 51,
                     "type": "User | null",
                     "decorators": []
                 }
@@ -471,7 +471,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 74,
+                    "line": 60,
                     "type": "EventEmitter"
                 },
                 {
@@ -479,7 +479,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 68,
+                    "line": 54,
                     "type": "EventEmitter"
                 },
                 {
@@ -487,7 +487,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 71,
+                    "line": 57,
                     "type": "EventEmitter"
                 }
             ],
@@ -502,7 +502,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n    selector: 'storybook-header',\n    template: `<header>\n        <div class=\"storybook-header\">\n            <div>\n                <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <g fill=\"none\" fillRule=\"evenodd\">\n                        <path\n                            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n                            fill=\"#FFF\" />\n                        <path d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\" fill=\"#555AB9\" />\n                        <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n                    </g>\n                </svg>\n                <h1>Acme</h1>\n            </div>\n            <div>\n                <div *ngIf=\"user\">\n                    <span class=\"welcome\">\n                        Welcome, <b>{{ user.name }}</b\n                        >!\n                    </span>\n                    <storybook-button *ngIf=\"user\" size=\"small\" (onClick)=\"onLogout.emit($event)\" label=\"Log out\" />\n                </div>\n                <div *ngIf=\"!user\">\n                    <storybook-button\n                        *ngIf=\"!user\"\n                        size=\"small\"\n                        class=\"margin-left\"\n                        (onClick)=\"onLogin.emit($event)\"\n                        label=\"Log in\" />\n                    <storybook-button\n                        *ngIf=\"!user\"\n                        primary\n                        size=\"small\"\n                        primary=\"true\"\n                        class=\"margin-left\"\n                        (onClick)=\"onCreateAccount.emit($event)\"\n                        label=\"Sign up\" />\n                </div>\n            </div>\n        </div>\n    </header>`,\n    styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n    @Input()\n    user: User | null = null;\n\n    @Output()\n    onLogin = new EventEmitter<Event>();\n\n    @Output()\n    onLogout = new EventEmitter<Event>();\n\n    @Output()\n    onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -515,7 +515,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-badb6d8cee577661da79ba82ad8f599604afd40fa34e36c7b88d71d77a4fbc7184228cba2f0d73e255d0b7bc51c4c7a8e7b0128b3624aeb0255abab9030fa59a",
+            "id": "component-PageComponent-2fb90bdcc83597f4d02180a337513275c264c5dd87f94d7f40687e1efb85f04371fd65a80174e334680e34fbfdfed2ebd269f51f0b22e1ed815a45f6b611f16d",
             "file": "projects/testing/src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -527,7 +527,7 @@
                 "./page.css"
             ],
             "styles": [],
-            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "template": "<article>        <storybook-header\n            [user]=\"user\"\n            (onLogout)=\"doLogout()\"\n            (onLogin)=\"doLogin()\"\n            (onCreateAccount)=\"doCreateAccount()\" />\n        <section class=\"storybook-page\">\n            <h2>Pages in Storybook</h2>\n            <p>\n                We recommend building UIs with a\n                <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n                    <strong>component-driven</strong>\n                </a>\n                process starting with atomic components and ending with pages.\n            </p>\n            <p>\n                Render pages with mock data. This makes it easy to build and review page states without needing to\n                navigate to them in your app. Here are some handy patterns for managing page data in Storybook:\n            </p>\n            <ul>\n                <li>\n                    Use a higher-level connected component. Storybook helps you compose such data from the \"args\" of\n                    child component stories\n                </li>\n                <li>\n                    Assemble data in the page component from your services. You can mock these services out using\n                    Storybook.\n                </li>\n            </ul>\n            <p>\n                Get a guided tutorial on component-driven development at\n                <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n                    Storybook tutorials\n                </a>\n                . Read more in the\n                <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n                .\n            </p>\n            <div class=\"tip-wrapper\">\n                <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n                <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <g fill=\"none\" fillRule=\"evenodd\">\n                        <path\n                            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n                            id=\"a\"\n                            fill=\"#999\" />\n                    </g>\n                </svg>\n                Viewports addon in the toolbar\n            </div>\n        </section>\n    </article>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -542,7 +542,7 @@
                     "type": "User | null",
                     "optional": false,
                     "description": "",
-                    "line": 64
+                    "line": 61
                 }
             ],
             "methodsClass": [
@@ -552,7 +552,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 74,
+                    "line": 71,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -562,7 +562,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 67,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -572,7 +572,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 63,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -586,7 +586,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n    selector: 'storybook-page',\n    template: `<article>\n        <storybook-header\n            [user]=\"user\"\n            (onLogout)=\"doLogout()\"\n            (onLogin)=\"doLogin()\"\n            (onCreateAccount)=\"doCreateAccount()\" />\n        <section class=\"storybook-page\">\n            <h2>Pages in Storybook</h2>\n            <p>\n                We recommend building UIs with a\n                <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n                    <strong>component-driven</strong>\n                </a>\n                process starting with atomic components and ending with pages.\n            </p>\n            <p>\n                Render pages with mock data. This makes it easy to build and review page states without needing to\n                navigate to them in your app. Here are some handy patterns for managing page data in Storybook:\n            </p>\n            <ul>\n                <li>\n                    Use a higher-level connected component. Storybook helps you compose such data from the \"args\" of\n                    child component stories\n                </li>\n                <li>\n                    Assemble data in the page component from your services. You can mock these services out using\n                    Storybook.\n                </li>\n            </ul>\n            <p>\n                Get a guided tutorial on component-driven development at\n                <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n                    Storybook tutorials\n                </a>\n                . Read more in the\n                <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n                .\n            </p>\n            <div class=\"tip-wrapper\">\n                <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n                <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <g fill=\"none\" fillRule=\"evenodd\">\n                        <path\n                            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n                            id=\"a\"\n                            fill=\"#999\" />\n                    </g>\n                </svg>\n                Viewports addon in the toolbar\n            </div>\n        </section>\n    </article>`,\n    styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n    user: User | null = null;\n\n    doLogout() {\n        this.user = null;\n    }\n\n    doLogin() {\n        this.user = { name: 'Jane Doe' };\n    }\n\n    doCreateAccount() {\n        this.user = { name: 'Jane Doe' };\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -599,7 +599,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-302e935701180a642ff163fd965348b983b223913849c54d0492ecbd10d0234f648dd38be1f39111ae80ba87900b8398ae6ca30c67e45ea71ec12f48f5d93371",
+            "id": "component-TestComponent-a48c8e038db4a3df11894247adcf892729aa9ad12a7a5ce1c10cf225f56b8358afe7ff72ac1c9dd715bc4e8ff4c19ce8daf2b7e2efd83a45af8cab16338a56c2",
             "file": "projects/testing/src/app/test/test.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -609,7 +609,7 @@
             "selector": "app-test",
             "styleUrls": [],
             "styles": [],
-            "template": "<div>\n    <p>Call pipe {{ stuff | call: capsThis }}</p>\n    <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n    <button (click)=\"setType('solid')\">make solid</button>\n    <button (click)=\"setType('liquid')\">make liquid</button>\n</div>\n<div>\n    <p>count: {{ count() }}</p>\n    <p>doubleCount: {{ doubleCount() }}</p>\n    <hr />\n    <p>countObj: {{ countObj().count }}</p>\n    <p>doubleCountObj: {{ doubleCountObj().count }}</p>\n    <button (click)=\"updateValue()\" mat-raised-button color=\"primary\">update value</button>\n</div>\n",
+            "template": "<div>\n    <p>Call pipe {{ stuff | call: capsThis }}</p>\n    <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n    <button (click)=\"setType('solid')\">make solid</button>\n    <button (click)=\"setType('liquid')\">make liquid</button>\n</div>\n<mat-divider />\n<div>\n    <p>count: {{ count() }}</p>\n    <p>doubleCount: {{ doubleCount() }}</p>\n    <hr />\n    <p>countObj: {{ countObj().count }}</p>\n    <p>doubleCountObj: {{ doubleCountObj().count }}</p>\n    <button (click)=\"updateValue()\" mat-raised-button color=\"primary\">update value</button>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -624,7 +624,7 @@
                     "type": "WritableSignal<number>",
                     "optional": false,
                     "description": "",
-                    "line": 45
+                    "line": 47
                 },
                 {
                     "name": "countObj",
@@ -634,7 +634,7 @@
                     "type": "WritableSignal<literal type>",
                     "optional": false,
                     "description": "",
-                    "line": 48
+                    "line": 50
                 },
                 {
                     "name": "doubleCount",
@@ -644,7 +644,7 @@
                     "type": "Signal<number>",
                     "optional": false,
                     "description": "",
-                    "line": 46
+                    "line": 48
                 },
                 {
                     "name": "doubleCountObj",
@@ -654,7 +654,7 @@
                     "type": "Signal<literal type>",
                     "optional": false,
                     "description": "",
-                    "line": 52
+                    "line": 54
                 },
                 {
                     "name": "stuff",
@@ -664,7 +664,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 31
                 },
                 {
                     "name": "type",
@@ -674,7 +674,7 @@
                     "type": "\"solid\" | \"liquid\"",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 33
                 }
             ],
             "methodsClass": [
@@ -691,7 +691,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 39,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -726,7 +726,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 41,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -764,7 +764,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -785,7 +785,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 56,
+                    "line": 58,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -811,12 +811,16 @@
                 {
                     "name": "MatButtonModule",
                     "type": "module"
+                },
+                {
+                    "name": "MatDividerModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Signal, WritableSignal, computed, signal } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CallPipe, ApplyPipe } from 'ngxtension/call-apply';\nimport { MatButtonModule } from '@angular/material/button';\n\n@Component({\n    selector: 'app-test',\n    standalone: true,\n    imports: [CommonModule, CallPipe, ApplyPipe, MatButtonModule],\n    template: `\n        <div>\n            <p>Call pipe {{ stuff | call: capsThis }}</p>\n            <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n            <button (click)=\"setType('solid')\">make solid</button>\n            <button (click)=\"setType('liquid')\">make liquid</button>\n        </div>\n        <div>\n            <p>count: {{ count() }}</p>\n            <p>doubleCount: {{ doubleCount() }}</p>\n            <hr />\n            <p>countObj: {{ countObj().count }}</p>\n            <p>doubleCountObj: {{ doubleCountObj().count }}</p>\n            <button (click)=\"updateValue()\" mat-raised-button color=\"primary\">update value</button>\n        </div>\n    `,\n    styles: [],\n})\nexport class TestComponent {\n    stuff = 'stuff';\n\n    type: 'solid' | 'liquid' = 'solid';\n\n    setType(type: 'solid' | 'liquid') {\n        this.type = type;\n    }\n\n    capsThis(thing: string) {\n        return thing.toUpperCase();\n    }\n\n    getTargetFieldPlaceholder(type: 'solid' | 'liquid', extraPrompt?: string) {\n        return (type === 'solid' ? 'fork' : 'spoon') + (extraPrompt ?? '');\n    }\n\n    count: WritableSignal<number> = signal(1);\n    doubleCount: Signal<number> = computed(() => this.count() * 2);\n\n    countObj: WritableSignal<{ name: string; count: number }> = signal({\n        name: 'thingy',\n        count: 1,\n    });\n    doubleCountObj: Signal<{ name: string; count: number }> = computed(() => {\n        return { name: this.countObj().name, count: this.countObj().count * 2 };\n    });\n\n    updateValue() {\n        this.count.update(value => value + 1);\n        this.countObj.update(value => {\n            return { name: value.name, count: value.count + 1 };\n        });\n    }\n}\n",
+            "sourceCode": "import { Component, Signal, WritableSignal, computed, signal } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CallPipe, ApplyPipe } from 'ngxtension/call-apply';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatDividerModule } from '@angular/material/divider';\n\n@Component({\n    selector: 'app-test',\n    standalone: true,\n    imports: [CommonModule, CallPipe, ApplyPipe, MatButtonModule, MatDividerModule],\n    template: `\n        <div>\n            <p>Call pipe {{ stuff | call: capsThis }}</p>\n            <p>Apply pipe: {{ getTargetFieldPlaceholder | apply: type }}</p>\n            <button (click)=\"setType('solid')\">make solid</button>\n            <button (click)=\"setType('liquid')\">make liquid</button>\n        </div>\n        <mat-divider />\n        <div>\n            <p>count: {{ count() }}</p>\n            <p>doubleCount: {{ doubleCount() }}</p>\n            <hr />\n            <p>countObj: {{ countObj().count }}</p>\n            <p>doubleCountObj: {{ doubleCountObj().count }}</p>\n            <button (click)=\"updateValue()\" mat-raised-button color=\"primary\">update value</button>\n        </div>\n    `,\n    styles: [],\n})\nexport class TestComponent {\n    stuff = 'stuff';\n\n    type: 'solid' | 'liquid' = 'solid';\n\n    setType(type: 'solid' | 'liquid') {\n        this.type = type;\n    }\n\n    capsThis(thing: string) {\n        return thing.toUpperCase();\n    }\n\n    getTargetFieldPlaceholder(type: 'solid' | 'liquid', extraPrompt?: string) {\n        return (type === 'solid' ? 'fork' : 'spoon') + (extraPrompt ?? '');\n    }\n\n    count: WritableSignal<number> = signal(1);\n    doubleCount: Signal<number> = computed(() => this.count() * 2);\n\n    countObj: WritableSignal<{ name: string; count: number }> = signal({\n        name: 'thingy',\n        count: 1,\n    });\n    doubleCountObj: Signal<{ name: string; count: number }> = computed(() => {\n        return { name: this.countObj().name, count: this.countObj().count * 2 };\n    });\n\n    updateValue() {\n        this.count.update(value => value + 1);\n        this.countObj.update(value => {\n            return { name: value.name, count: value.count + 1 };\n        });\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -881,7 +885,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n    args: {\n        size: 'large',\n        label: 'Button',\n    },\n}"
             },
             {
                 "name": "LoggedIn",
@@ -891,7 +895,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                "defaultValue": "{\n    args: {\n        user: {\n            name: 'Jane Doe',\n        },\n    },\n}"
             },
             {
                 "name": "LoggedIn",
@@ -901,7 +905,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+                "defaultValue": "{\n    render: (args: Page) => ({\n        props: args,\n    }),\n    play: async ({ canvasElement }) => {\n        const canvas = within(canvasElement);\n        const loginButton = await canvas.getByRole('button', {\n            name: /Log in/i,\n        });\n        await userEvent.click(loginButton);\n    },\n}"
             },
             {
                 "name": "LoggedOut",
@@ -921,7 +925,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+                "defaultValue": "{\n    render: (args: Page) => ({\n        props: args,\n    }),\n}"
             },
             {
                 "name": "meta",
@@ -931,7 +935,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+                "defaultValue": "{\n    title: 'Example/Button',\n    component: Button,\n    tags: ['autodocs'],\n    render: (args: Button) => ({\n        props: {\n            backgroundColor: null,\n            ...args,\n        },\n    }),\n    argTypes: {\n        backgroundColor: {\n            control: 'color',\n        },\n    },\n}"
             },
             {
                 "name": "meta",
@@ -941,7 +945,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Header>",
-                "defaultValue": "{\n  title: 'Example/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                "defaultValue": "{\n    title: 'Example/Header',\n    component: Header,\n    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n    tags: ['autodocs'],\n    render: args => ({ props: args }),\n    decorators: [\n        moduleMetadata({\n            declarations: [Button],\n            imports: [CommonModule],\n        }),\n    ],\n    parameters: {\n        // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n        layout: 'fullscreen',\n    },\n}"
             },
             {
                 "name": "meta",
@@ -951,7 +955,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Page>",
-                "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                "defaultValue": "{\n    title: 'Example/Page',\n    component: Page,\n    parameters: {\n        // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n        layout: 'fullscreen',\n    },\n    decorators: [\n        moduleMetadata({\n            declarations: [Button, Header],\n            imports: [CommonModule],\n        }),\n    ],\n}"
             },
             {
                 "name": "preview",
@@ -971,7 +975,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n    args: {\n        primary: true,\n        label: 'Button',\n    },\n}"
             },
             {
                 "name": "Secondary",
@@ -981,7 +985,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n    args: {\n        label: 'Button',\n    },\n}"
             },
             {
                 "name": "SimpleState",
@@ -1001,7 +1005,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n    args: {\n        size: 'small',\n        label: 'Button',\n    },\n}"
             }
         ],
         "functions": [],
@@ -1073,7 +1077,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n    args: {\n        size: 'large',\n        label: 'Button',\n    },\n}"
                 },
                 {
                     "name": "meta",
@@ -1083,7 +1087,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+                    "defaultValue": "{\n    title: 'Example/Button',\n    component: Button,\n    tags: ['autodocs'],\n    render: (args: Button) => ({\n        props: {\n            backgroundColor: null,\n            ...args,\n        },\n    }),\n    argTypes: {\n        backgroundColor: {\n            control: 'color',\n        },\n    },\n}"
                 },
                 {
                     "name": "Primary",
@@ -1093,7 +1097,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n    args: {\n        primary: true,\n        label: 'Button',\n    },\n}"
                 },
                 {
                     "name": "Secondary",
@@ -1103,7 +1107,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n    args: {\n        label: 'Button',\n    },\n}"
                 },
                 {
                     "name": "Small",
@@ -1113,7 +1117,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n    args: {\n        size: 'small',\n        label: 'Button',\n    },\n}"
                 }
             ],
             "projects/testing/src/stories/Header.stories.ts": [
@@ -1125,7 +1129,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                    "defaultValue": "{\n    args: {\n        user: {\n            name: 'Jane Doe',\n        },\n    },\n}"
                 },
                 {
                     "name": "LoggedOut",
@@ -1145,7 +1149,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Header>",
-                    "defaultValue": "{\n  title: 'Example/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                    "defaultValue": "{\n    title: 'Example/Header',\n    component: Header,\n    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n    tags: ['autodocs'],\n    render: args => ({ props: args }),\n    decorators: [\n        moduleMetadata({\n            declarations: [Button],\n            imports: [CommonModule],\n        }),\n    ],\n    parameters: {\n        // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n        layout: 'fullscreen',\n    },\n}"
                 }
             ],
             "projects/testing/src/stories/Page.stories.ts": [
@@ -1157,7 +1161,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+                    "defaultValue": "{\n    render: (args: Page) => ({\n        props: args,\n    }),\n    play: async ({ canvasElement }) => {\n        const canvas = within(canvasElement);\n        const loginButton = await canvas.getByRole('button', {\n            name: /Log in/i,\n        });\n        await userEvent.click(loginButton);\n    },\n}"
                 },
                 {
                     "name": "LoggedOut",
@@ -1167,7 +1171,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+                    "defaultValue": "{\n    render: (args: Page) => ({\n        props: args,\n    }),\n}"
                 },
                 {
                     "name": "meta",
@@ -1177,7 +1181,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Page>",
-                    "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                    "defaultValue": "{\n    title: 'Example/Page',\n    component: Page,\n    parameters: {\n        // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n        layout: 'fullscreen',\n    },\n    decorators: [\n        moduleMetadata({\n            declarations: [Button, Header],\n            imports: [CommonModule],\n        }),\n    ],\n}"
                 }
             ],
             "projects/testing/.storybook/preview.ts": [
